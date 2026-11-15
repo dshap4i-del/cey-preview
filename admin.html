@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<script src="theme-boot.js"></script>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<link rel="icon" href="img/logo.png">
+<title>Studio admin (example data) · Coconut Elephant Yoga</title>
+<link rel="stylesheet" href="site.css">
+<link rel="stylesheet" href="admin.css">
+<link rel="stylesheet" href="theme.css">
+</head>
+<body class="adm">
+<p class="mock" role="note">Example mockup by Richmond AI Help, not affiliated with or endorsed by Coconut Elephant Yoga. Studio admin preview with example data. Nothing here is live and nothing sends.</p>
+<div class="app">
+  <aside class="side">
+    <a class="sbrand" href="index.html"><img src="img/logo.png" alt="" width="40" height="40"><span><b>Coconut Elephant</b><i>Studio admin</i></span></a>
+    <nav class="snav" role="tablist" aria-label="Admin sections">
+      <button type="button" role="tab" data-tab="today" aria-selected="true"><span>☀</span>Today</button>
+      <button type="button" role="tab" data-tab="students" aria-selected="false"><span>✿</span>New students</button>
+      <button type="button" role="tab" data-tab="waivers" aria-selected="false"><span>✎</span>Waivers</button>
+      <button type="button" role="tab" data-tab="events" aria-selected="false"><span>✦</span>Events &amp; sales</button>
+      <button type="button" role="tab" data-tab="messages" aria-selected="false"><span>✉</span>Messages</button>
+    </nav>
+    <div class="sfoot"><span class="exdata">Example data</span><a href="index.html">← Back to the website</a></div>
+  </aside>
+  <main class="main">
+    <header class="mtop">
+      <div><p class="crumb">Studio admin · <span class="exdata">Example data</span></p><h1 id="mh">Good afternoon, Mary Beth</h1><p class="msub" id="ms">Sunday, November 15</p></div>
+      <img class="me" src="img/t-mb.jpg" alt="Mary Beth" width="48" height="48">
+    </header>
+
+    <section data-pane="today">
+      <div class="kpis">
+        <div class="kpi"><b>2</b><span>Classes today</span></div>
+        <div class="kpi"><b>3</b><span>New students this week</span></div>
+        <div class="kpi warn"><b>1</b><span>Waiver missing</span></div>
+        <div class="kpi"><b>14</b><span>Event tickets sold</span></div>
+      </div>
+      <h2 class="ph2">Today’s classes</h2>
+      <div class="card cls">
+        <div class="clt"><b>2:00 pm</b><span>1 hr 15 min</span></div>
+        <div class="cli"><h3>Gentle Sensory Yoga · Studio</h3><p>You’re teaching · <span class="tag">Live music</span></p>
+          <div class="bar"><i style="width:60%"></i></div><p class="sm">9 booked of 15 spots · 2 new students</p></div>
+      </div>
+      <div class="card cls">
+        <div class="clt"><b>2:00 pm</b><span>1 hr 15 min</span></div>
+        <div class="cli"><h3>Gentle Sensory Yoga · Online</h3><p>Zoom · same class</p>
+          <div class="bar"><i style="width:35%"></i></div><p class="sm">7 joining online</p></div>
+      </div>
+      <h2 class="ph2">Needs your attention</h2>
+      <div class="card list">
+        <div class="li"><span class="dot new"></span><div><b>Jordan Example</b> is new today · Beginner · tender left knee</div><button type="button" class="mini" data-goto="waivers" data-w="0">View waiver</button></div>
+        <div class="li"><span class="dot new"></span><div><b>Sam Sample</b> is new today · Brand new to yoga</div><button type="button" class="mini" data-goto="students">Welcome note</button></div>
+        <div class="li"><span class="dot warn"></span><div><b>Riley Placeholder</b> booked Tuesday Slow Flow but hasn’t signed a waiver</div><button type="button" class="mini" data-goto="messages" data-msg="remind">Draft reminder</button></div>
+      </div>
+    </section>
+
+    <section data-pane="students" hidden>
+      <h2 class="ph2">New students</h2>
+      <div class="card list" id="stu"></div>
+      <div class="card draft" id="welcome" hidden>
+        <p class="lab">Welcome note draft · <span class="exdata">Nothing sends</span></p>
+        <textarea id="wtxt" rows="6"></textarea>
+        <div class="row"><button type="button" class="btn primary sm" id="wcopy">Copy text</button><button type="button" class="btn quiet sm" id="wclose">Close</button><span class="ok" id="wok" hidden>Copied</span></div>
+      </div>
+    </section>
+
+    <section data-pane="waivers" hidden>
+      <h2 class="ph2">Signed waivers</h2>
+      <div class="card list" id="wl"></div>
+    </section>
+
+    <section data-pane="events" hidden>
+      <h2 class="ph2">Events &amp; ticket sales <span class="exdata">Example counts</span></h2>
+      <div id="evs"></div>
+    </section>
+
+    <section data-pane="messages" hidden>
+      <h2 class="ph2">Announcement or reminder</h2>
+      <div class="card draft">
+        <div class="seg2" id="tpl"><button type="button" data-t="announce" aria-pressed="true">Studio announcement</button><button type="button" data-t="remind" aria-pressed="false">Waiver reminder</button><button type="button" data-t="event" aria-pressed="false">Event promo</button></div>
+        <label class="lab" for="to">To</label><input id="to" value="All students (example list)">
+        <label class="lab" for="msg">Message</label><textarea id="msg" rows="7"></textarea>
+        <div class="row"><button type="button" class="btn primary sm" disabled title="Example only">Send</button><span class="sm">Draft only · example data · nothing sends</span></div>
+      </div>
+    </section>
+    <p class="backlink"><a href="index.html">← Back to the website</a></p>
+  </main>
+</div>
+<div class="sheet" id="wsheet" hidden role="dialog" aria-modal="true" aria-labelledby="wsh"><div class="sheet-in" id="wsIn"></div></div>
+<script src="admin.js"></script>
+<script src="theme.js"></script>
+</body>
+</html>

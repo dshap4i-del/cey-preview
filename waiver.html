@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<script src="theme-boot.js"></script>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#f8f4ec">
+<link rel="icon" href="img/logo.png">
+<title>New student waiver · Coconut Elephant Yoga</title>
+<meta name="description" content="Sign your new student waiver online.">
+<link rel="stylesheet" href="site.css">
+<link rel="stylesheet" href="theme.css">
+</head>
+<body>
+<p class="mock" role="note">Example mockup by Richmond AI Help, not affiliated with or endorsed by Coconut Elephant Yoga. Nothing here is live.</p>
+<header class="hdr">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="img/logo.png" alt="" width="44" height="44"><span><b>Coconut Elephant Yoga</b><i>the light in us honors the light in you</i></span></a>
+    <a class="btn primary sm mbook" href="schedule.html">Book</a>
+    <button class="menu-btn" type="button" aria-label="Menu" aria-expanded="false" aria-controls="hnav"><span></span></button>
+    <nav class="hnav" id="hnav" aria-label="Main"><a href="schedule.html">Schedule</a><a href="events.html">Events</a><a href="classes.html">Classes</a><a href="teachers.html">Teachers</a><a href="wellness.html">Wellness</a><a href="passes.html">Passes</a><a href="visit.html">Visit</a><a href="waiver.html" aria-current="page">Waiver</a><a class="btn" href="schedule.html">Book a class</a></nav>
+  </div>
+</header>
+<main>
+
+<section class="phero"><div class="wrap"><p class="eyebrow">New student waiver</p><h1>Welcome. <em>Let’s get you ready.</em></h1><p class="lede">Please fill this out before your first class. It takes about two minutes.</p></div></section>
+<section class="sec" style="padding-top:24px"><div class="wrap wv">
+<div class="wform" id="wform">
+<form id="wvf" novalidate>
+<fieldset><legend>About you</legend>
+<label class="fld" data-req><span>Full name</span><input id="wName" autocomplete="name" required></label>
+<div class="two"><label class="fld" data-req><span>Email</span><input id="wEmail" type="email" autocomplete="email" required></label><label class="fld" data-req><span>Mobile</span><input id="wPhone" type="tel" inputmode="tel" autocomplete="tel" required></label></div>
+<label class="fld" data-req><span>Emergency contact <i>(name and phone)</i></span><input id="wEmer" required></label>
+</fieldset>
+<fieldset><legend>Your practice</legend>
+<p class="fld"><span>How would you describe your yoga experience?</span></p>
+<div class="seg" id="wLevel"><label><input type="radio" name="lvl" value="Brand new"><span>Brand new</span></label><label><input type="radio" name="lvl" value="Beginner"><span>Beginner</span></label><label><input type="radio" name="lvl" value="Intermediate"><span>Intermediate</span></label><label><input type="radio" name="lvl" value="Advanced"><span>Advanced</span></label></div>
+<label class="fld" style="margin-top:16px"><span>Injuries or health conditions your teacher should know about <i>(optional)</i></span><textarea id="wInj" rows="3"></textarea></label>
+<label class="chk"><input type="checkbox" id="wMinor"><span>The student is under 18</span></label>
+<label class="fld" id="wGuardWrap" hidden data-req><span>Parent or guardian full name</span><input id="wGuard"></label>
+</fieldset>
+<fieldset><legend>Waiver</legend>
+<div class="legal" tabindex="0"><p>I am choosing to take part in classes and events at Coconut Elephant Yoga. I understand yoga involves physical movement and that I should listen to my body and rest whenever I need to.</p><p>I will tell my teacher about any injuries or health conditions before class and follow the teacher’s guidance.</p><p>I understand that the studio’s full release and hold-harmless terms apply to my participation.</p><p class="fn">Sample waiver wording</p></div>
+<label class="chk"><input type="checkbox" id="wAgree"><span>I have read and agree to the waiver</span></label>
+<label class="chk"><input type="checkbox" id="wPhoto"><span>The studio may share class photos that include me <i style="color:var(--ink3);font-style:normal">(optional)</i></span></label>
+</fieldset>
+<fieldset><legend>Sign</legend>
+<label class="fld" data-req><span id="sigLab">Type your full name</span><input id="wTyped" autocomplete="name"></label>
+<p class="fld"><span>Sign below with your finger or mouse</span></p>
+<div class="sig"><canvas id="sig" aria-label="Signature pad"></canvas><span class="line"></span><span class="hint" id="sigHint">Sign here</span></div>
+<div class="sigbar"><button type="button" class="lnk" id="sigClear">Clear signature</button><span id="sigDate"></span></div>
+</fieldset>
+<p class="err" id="wErr" hidden></p>
+<button type="submit" class="btn primary full" style="margin-top:8px">Submit waiver</button>
+</form>
+<div class="done" id="wDone" hidden tabindex="-1">
+<div class="seal"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M13 25l7 7 15-16"/></svg></div>
+<h2>You’re all set.</h2>
+<p class="l" id="doneP">See you on the mat.</p>
+<dl class="sum" id="doneSum"></dl>
+<div class="acts"><a class="btn primary" href="schedule.html">Book your first class</a><button type="button" class="btn quiet" onclick="window.print()">Save a copy (PDF)</button></div>
+<p style="margin-top:18px"><button type="button" class="lnk" id="wAgain">Fill out another waiver</button></p>
+</div>
+</div>
+<aside class="wside">
+<div class="vcard"><h3>New here?</h3><p style="margin:8px 0 14px">Your first three classes are $33 with the New Student Special.</p><a class="btn primary sm" href="https://coconutelephantyoga.punchpass.com/passes/49413" target="_blank" rel="noopener">Get the special</a></div>
+<div class="vcard"><h3>Under 18?</h3><p style="margin-top:8px">A parent or guardian signs for anyone under 18. Ages 12–15 attend with an adult.</p></div>
+<div class="vcard"><h3>Questions?</h3><p style="margin-top:8px"><a href="tel:+18043052297">804-305-2297</a><br><a href="mailto:coconutelephantyoga@gmail.com">coconutelephantyoga@gmail.com</a></p></div>
+</aside>
+</div></section>
+
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <div class="fb"><img src="img/logo.png" alt="" width="56" height="56"><div><b>Coconut Elephant Yoga</b><p class="tl">~ the light in us honors the light in you ~</p><p style="margin-top:10px">825 Grove Road, Suite 12<br>Midlothian, VA 23114</p></div></div>
+    <div><h4>Practice</h4><ul><li><a href="schedule.html">Class schedule</a></li><li><a href="events.html">Events &amp; workshops</a></li><li><a href="classes.html">Classes</a></li><li><a href="wellness.html">Wellness services</a></li><li><a href="passes.html">Passes &amp; pricing</a></li></ul></div>
+    <div><h4>Studio</h4><ul><li><a href="teachers.html">Our teachers</a></li><li><a href="visit.html">Visit &amp; contact</a></li><li><a href="waiver.html">New student waiver</a></li><li><a href="tel:+18043052297">804-305-2297</a></li><li><a href="mailto:coconutelephantyoga@gmail.com">coconutelephantyoga@gmail.com</a></li></ul></div>
+    <div class="fine"><span>Example mockup by Richmond AI Help, not affiliated with or endorsed by Coconut Elephant Yoga. Nothing here is live. Schedule, prices and text from coconutelephantyoga.com and its Punchpass pages, Nov 15, 2026. Photos: coconutelephantyoga.com.</span><a href="admin.html">Studio admin (preview)</a></div>
+  </div>
+</footer>
+
+<script src="site.js"></script>
+<script src="theme.js"></script>
+</body>
+</html>
