@@ -1,0 +1,1 @@
+Fonts in this folder are subsets of Google Fonts families released under the SIL Open Font License 1.1 (https://openfontlicense.org). Subset locally with fonttools; no CDN.
