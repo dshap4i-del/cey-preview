@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<script src="theme-boot.js"></script>
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="robots" content="noindex,nofollow">
 <meta name="theme-color" content="#2c4a3e">
@@ -9,17 +10,16 @@
 <title>Coconut Elephant Yoga · idea 1, your first class (example mockup)</title>
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="ideas-nav.css">
+<link rel="stylesheet" href="theme.css">
 </head>
 <body>
 <p class="mock" role="note">Example mockup by Richmond AI Help, not affiliated with or endorsed by Coconut Elephant Yoga. Nothing here is live.</p>
-<div class="rsw-rib"><div><b>Idea 1 · First visit</b><span>A new student finds a class, gets the New Student Special and signs the waiver on their phone. Tap “What you’d see” for your side.</span><a href="index.html">All ideas</a></div></div>
-<details class="hw page" open><summary><span class="hw-i" aria-hidden="true">?</span><span><b>About this idea: a “New here” page</b><small>Tap to see what it is, how it would work and why</small></span></summary><div class="hw-b"><div><h4>What this is</h4><p>A single page for people who have never been to the studio. It walks them from “which class?” to “signed up and ready” in one place.</p></div><div><h4>How it would work day to day</h4><ul><li>A new student answers three questions and sees a real class from your schedule.</li><li>They tap the New Student Special, which opens your Punchpass page to buy it, exactly as today.</li><li>They sign the waiver on their phone; you get an email with their details before class.</li><li>You keep running classes, passes and payments in Punchpass. Nothing about that changes.</li></ul></div><div><h4>Why it’s designed this way</h4><p>Today a new student has to piece this together: the home page NEW STUDENT button leads to an error page, and the waiver is a PDF to print, sign and bring or email in.</p></div><p class="hw-src">Source: coconutelephantyoga.com home page and Punchpass, opened Nov 15, 2026.</p></div></details>
 
 <header class="top">
   <a class="brand" href="#welcome"><img src="img/logo.png" alt="" width="44" height="44"><span><b>Coconut Elephant Yoga</b><i>the light in us honors the light in you</i></span></a>
   <nav class="nav" aria-label="Sections">
     <a href="#first">First visit</a><a href="#waiver">Waiver</a><a href="#events">Events</a>
-    <button type="button" class="ownerbtn" id="ownerOpen"><span class="ob-dot" aria-hidden="true"></span>What you’d see</button>
+    <button type="button" class="ownerbtn" id="ownerOpen"><span class="ob-dot" aria-hidden="true"></span>Studio owner view</button>
   </nav>
 </header>
 
@@ -50,9 +50,6 @@
     <h2 id="first-h">Which class should I try first?</h2>
     <p>Three quick questions, matched against this week’s real schedule.</p>
   </div>
-
-  <details class="hw "><summary><span class="hw-i" aria-hidden="true">?</span><span><b>How the class finder works</b><small>Three questions, one real class</small></span></summary><div class="hw-b"><div><h4>What this is</h4><p>A short quiz that recommends one class (and a second option) from this week’s real schedule.</p></div><div><h4>How it would work day to day</h4><ul><li>The student taps how they want to feel, when they’re free, and studio or online.</li><li>They see the class name, teacher, next dates and what to bring, in your own class-description words.</li><li>They can save a “first-class card” image or add the class to their phone calendar.</li><li>When your schedule changes in Punchpass, the recommendations would follow it.</li></ul></div><div><h4>Why it’s designed this way</h4><p>Your class descriptions page lists 16 classes, and not all of them are on this week’s schedule, so a beginner can’t easily tell which ones they can actually come to.</p></div><p class="hw-src">Source: Class Descriptions page and the Punchpass schedule, Nov 15, 2026. The quiz matching is our suggestion and easy to change.</p></div></details>
-  <details class="hw "><summary><span class="hw-i" aria-hidden="true">?</span><span><b>The New Student Special fix</b><small>Why the $33 button is called “the fixed button”</small></span></summary><div class="hw-b"><div><h4>What this is</h4><p>A button that goes straight to your real $33 New Student Special on Punchpass.</p></div><div><h4>How it would work day to day</h4><ul><li>A new student taps it and lands on the working Punchpass pass page.</li><li>Punchpass sells the pass and takes payment, just like today. Nothing new for you to manage.</li></ul></div><div><h4>Why it’s designed this way</h4><p>On Nov 15 the NEW STUDENT button on your home page had extra text stuck to its link, so it opened an error page. The pass page itself also said “This pass is currently sold out!”, which is a Punchpass setting worth checking.</p></div><p class="hw-src">Source: coconutelephantyoga.com home page link and the Punchpass pass page, Nov 15, 2026.</p></div></details>
   <div class="finder rise">
     <div class="q" data-q="feel">
       <p class="q-l">How would you like to feel?</p>
@@ -129,9 +126,18 @@
 
     <div class="keep">
       <canvas id="cardCanvas" width="1080" height="1350" hidden></canvas>
-      <figure class="card-prev"><img id="cardImg" alt="Your first-class card: class, time, teacher, pass and what to know"></figure>
+      <figure class="card-prev"><div class="fcard" id="fcard" aria-label="Your first-class card">
+        <div class="fc-top"><img src="img/logo.png" alt="" width="44" height="44"><div><p class="fc-k">My first class</p><p class="fc-b">Coconut Elephant Yoga</p></div></div>
+        <div class="fc-body">
+          <h3 class="fc-name" id="fcName">Gentle Sensory Yoga</h3>
+          <p class="fc-when" id="fcWhen">Sunday, Nov 15 · 2:00 pm</p>
+          <p class="fc-meta" id="fcMeta">with Mary Beth · 1 hr 15 min · 825 Grove Rd, Suite 12</p>
+          <div class="fc-pass"><b>$33</b><div><p>New Student Special</p><small>3 regular classes · $11 each · 60 days from your first</small></div></div>
+          <ul class="fc-tips" id="fcTips"><li>Register at least two hours ahead</li><li>Sign in; phone silent in the locked hallway</li><li>No perfume or fragranced lotion, please</li><li>Sign your waiver on your phone before class</li></ul>
+          <p class="fc-sign">See you on the mat.</p>
+        </div>
+      </div></figure>
       <div class="keep-acts">
-        <details class="hw "><summary><span class="hw-i" aria-hidden="true">?</span><span><b>Saving the card and adding to calendar</b><small>What “Keep it handy” does</small></span></summary><div class="hw-b"><div><h4>What this is</h4><p>After the quiz, the student can save a card image with their class and tips, or add the class to their phone calendar.</p></div><div><h4>How it would work day to day</h4><ul><li>Tap “Save my first-class card” to keep an image with the class, time, pass and what to bring.</li><li>Tap “Add to my calendar” to put the class, with its address or Zoom note, in their own calendar.</li><li>Both happen on the student’s phone; nothing is sent to you or stored.</li></ul></div><div><h4>Why it’s designed this way</h4><p>Your Punchpass schedule asks people to register ahead and cancel at least two hours before, so having the time and tips in their own calendar helps them arrive prepared.</p></div><p class="hw-src">Source: Punchpass schedule notes and studio etiquette page, Nov 15, 2026.</p></div></details>
         <p class="keep-h">Keep it handy</p>
         <a class="btn primary" id="cardPng" href="#" download="coconut-elephant-first-class.png">Save my first-class card</a>
         <a class="btn quiet" id="cardIcs" href="#" download="coconut-elephant-first-class.ics">Add to my calendar</a>
@@ -157,7 +163,6 @@
       <li>Mary Beth sees injuries and experience before class</li>
     </ul>
     <p class="wv-fine">In this mockup nothing leaves your device. The waiver paragraphs are example wording; Mary Beth would use her own.</p>
-    <details class="hw "><summary><span class="hw-i" aria-hidden="true">?</span><span><b>How the phone waiver works</b><small>What students do, and what reaches you</small></span></summary><div class="hw-b"><div><h4>What this is</h4><p>Your new-student waiver as a one-minute form on the phone, with a finger signature.</p></div><div><h4>How it would work day to day</h4><ul><li>The student opens it from this page or from a link in your welcome text.</li><li>They fill in contact and emergency details, experience, injuries, and a parent or guardian if they’re under 18, then sign.</li><li>A signed copy is saved, and an email like the preview lands in coconutelephantyoga@gmail.com.</li><li>You glance at it before class, so you know about a sore knee before they unroll a mat.</li></ul></div><div><h4>Why it’s designed this way</h4><p>Today the waiver is a 2023 PDF that students download, print, sign and bring or email. Your children policy needs a parent or guardian to sign for anyone under 18, so the form asks for that up front.</p></div><p class="hw-src">Source: home page waiver section and children policy, Nov 15, 2026. The legal wording here is an example; your own waiver text would be used.</p></div></details>
   </div>
 
   <div class="phone rise">
@@ -239,7 +244,7 @@
   <p class="ev-cite">Event dates, teachers and prices from the studio’s home page, Events and Training page, and Punchpass event pages, read Nov 15, 2026. Photos from coconutelephantyoga.com.</p>
 </section>
 
-<section class="mbv" aria-labelledby="mbv-h"><div class="mbv-card"><img src="img/mary-beth.jpg" alt="" width="72" height="72"><div><p class="k">What you (Mary Beth) would see</p><h2 id="mbv-h">Your private studio view</h2><p>A page only you would open on your phone: today’s class, which new students have signed their waivers, what they told you about injuries, and welcome texts ready to copy and send. The students and texts in it are examples.</p><button type="button" data-open-owner>Open what you’d see</button></div></div><details class="hw "><summary><span class="hw-i" aria-hidden="true">?</span><span><b>How “What you’d see” works</b><small>What you would actually do with it</small></span></summary><div class="hw-b"><div><h4>What this is</h4><p>A private screen for you, separate from what students see. It is not a new system to learn.</p></div><div><h4>How it would work day to day</h4><ul><li>Before class, open it and see who’s new today and whether each has signed.</li><li>Tap “Copy text” on a drafted welcome or reminder and send it from your own phone, or don’t. Nothing is sent automatically.</li><li>“Website fixes” lists the problems we found on your site; “This week” shows your Punchpass schedule.</li></ul></div><div><h4>Why it’s designed this way</h4><p>Today new-student details arrive on paper at class time. This puts them in front of you earlier, without changing how you book or take payment.</p></div><p class="hw-src">In a live version, new students would come from waiver submissions and Punchpass sign-ups; how that connects would be agreed with you first.</p></div></details></section>
+<section class="mbv" aria-labelledby="mbv-h"><div class="mbv-card"><img src="img/t-mb.jpg" alt="" width="72" height="72"><div><p class="k">For the studio</p><h2 id="mbv-h">Studio owner view</h2><p>Today’s class, who’s new, signed waivers and welcome notes, on one private screen. Shown with example students.</p><button type="button" data-open-owner>Open studio owner view</button></div></div></section>
 <footer class="foot">
   <div class="foot-in">
     <img src="img/logo.png" alt="" width="56" height="56">
@@ -257,11 +262,11 @@
 <div class="owner" id="owner" hidden role="dialog" aria-modal="true" aria-labelledby="ow-h">
   <div class="ow-panel">
     <header class="ow-top">
-      <img src="img/mary-beth.jpg" alt="Mary Beth" width="56" height="56">
-      <div><p class="eyebrow">What you (Mary Beth) would see · example</p><h2 id="ow-h">Good morning, Mary Beth</h2><p class="ow-sub" id="owSub">Sunday, Nov 15</p></div>
-      <button type="button" class="x" id="ownerClose" aria-label="Close what you’d see">×</button>
+      <img src="img/t-mb.jpg" alt="Mary Beth" width="56" height="56">
+      <div><p class="eyebrow">Studio owner view · example</p><h2 id="ow-h">Good morning, Mary Beth</h2><p class="ow-sub" id="owSub">Sunday, Nov 15</p></div>
+      <button type="button" class="x" id="ownerClose" aria-label="Close studio owner view">×</button>
     </header>
-    <p class="ow-intro"><b>Only you would see this page.</b> It shows today’s class, new students and their waivers, and ready-to-copy welcome texts. Students and texts are examples; nothing is sent from here.</p>
+    <p class="ow-intro">Private to the studio · example students · nothing is sent from here</p>
     <div class="ow-tabs" role="tablist">
       <button type="button" role="tab" aria-selected="true" data-tab="today">Today</button>
       <button type="button" role="tab" aria-selected="false" data-tab="fix">Website fixes</button>
@@ -302,6 +307,6 @@
 
 <nav class="rsw" aria-label="Switch between ideas"><span class="rsw-lab">Ideas</span><a href="index.html" class="rsw-all"><b aria-hidden="true">✦</b>All ideas</a><a href="first-visit.html" aria-current="page"><b aria-hidden="true">1</b>First visit</a><a href="website.html"><b aria-hidden="true">2</b>New site</a><a href="season.html"><b aria-hidden="true">3</b>Season</a></nav>
 <script src="app.js"></script>
-<script src="explain.js"></script>
+<script src="theme.js"></script>
 </body>
 </html>

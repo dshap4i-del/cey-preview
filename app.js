@@ -118,6 +118,16 @@
   ]).catch(function () {}) : Promise.resolve();
 
   function drawCard() {
+    (function () {
+      var c = pick.c, o = pick.occ[0], online = pick.where === "online";
+      $("#fcName").textContent = c.name;
+      $("#fcWhen").textContent = (o ? DAYS[o.at.getDay()] + ", " + MON[o.at.getMonth()] + " " + o.at.getDate() + " · " : DAYS[c.dow] + "s · ") + t12(c.h, c.m);
+      $("#fcMeta").textContent = "with " + c.teacher.replace("/", " & ") + " · " + durTxt(c.dur[pick.where]) + " · " + (online ? "online on Zoom" : "825 Grove Rd, Suite 12");
+      var tips = online ? ["Register at least one hour ahead", "Dim the lights, light a candle, gather blankets", "A belt or scarf works as a strap, big books as blocks"]
+        : ["Register at least two hours ahead", "Sign in; phone silent in the locked hallway", "No perfume or fragranced lotion, please"];
+      tips.push("Sign your waiver on your phone before class");
+      $("#fcTips").innerHTML = tips.map(function (t) { return "<li>" + esc(t) + "</li>"; }).join("");
+    })();
     fontsReady.then(function () {
       var cv = $("#cardCanvas"), x = cv.getContext("2d"), W = 1080, H = 1350, c = pick.c, o = pick.occ[0], online = pick.where === "online";
       x.fillStyle = "#f8f4ec"; x.fillRect(0, 0, W, H);
@@ -158,7 +168,7 @@
       x.fillStyle = "rgba(34,48,42,.5)"; x.font = '400 18px "DM Sans"';
       x.fillText("Example mockup by Richmond AI Help · not affiliated with Coconut Elephant Yoga", 80, H - 40);
       var url = cv.toDataURL("image/png");
-      $("#cardImg").src = url; $("#cardPng").href = url;
+      $("#cardPng").href = url;
       if (o) $("#cardIcs").href = ics([{ uid: pick.id + "-" + key(o.at), title: c.name + " · Coconut Elephant Yoga", start: o.at, min: c.dur[pick.where], loc: online ? "Online (Zoom link from the studio)" : "825 Grove Road, Suite 12, Midlothian, VA 23114", desc: "Your first class. New Student Special: $33 for three regular classes. Register on Punchpass: " + PP + "/classes" }]);
     });
   }
@@ -291,9 +301,9 @@
   var EVENTS = [
     { id: "belly", cat: "move", d: new Date(2026, 10, 19, 18, 45), min: 75, title: "Thankful Body: A Belly Dance Workshop", who: "Sirona Luna", time: "6:45–8:00 pm", price: "$32", img: "img/belly-dance.jpg", alt: "Students belly dancing in the studio", credit: "Photo: coconutelephantyoga.com", desc: "Celebrate the beauty, strength, and wisdom of your body through the joy of belly dance. All levels are welcome.", url: PP + "/classes/21199371" },
     { id: "intuitive", cat: "energy", d: new Date(2026, 10, 21, 18, 30), min: 90, title: "Intuitive Circle", who: "Melissa", time: "6:30–8:00 pm", price: "$27", img: "img/intuitive-circle.jpg", pos: "top", alt: "Melissa, who leads the Intuitive Circle", credit: "Photo: coconutelephantyoga.com", desc: "An uplifting, in-person experience where you’ll actively expand your intuitive abilities in a safe, welcoming, and supportive environment.", url: PP + "/classes/21199488" },
-    { id: "blackfriday", cat: "move", d: new Date(2026, 10, 27, 10, 0), min: 60, title: "Black Friday Flow", who: "Mary Beth · Hatha Mixed Level", time: "10:00–11:00 am", price: "Regular class", type: "t-bf", typeText: "Take a break from the Black Friday rush", desc: "The usual Friday Hatha Mixed Level class, in the studio and online.", url: PP + "/classes" },
-    { id: "reiki", cat: "energy", d: new Date(2026, 11, 4, 18, 30), min: 90, title: "Reiki Circle: Energetic Cleansing", who: "Jennifer & Holly", time: "6:30–8:00 pm", price: "$15–$50", priceNote: "donation", type: "t-reiki", typeText: "Clearing the energy field", desc: "Smoke, sound, intention, visualization and more. For seasoned practitioners and people new to Reiki alike.", url: PP + "/classes/21199122" },
-    { id: "holiday", cat: "still", d: new Date(2026, 11, 12, 14, 0), min: 120, title: "Holiday Serenity: A Mind-Body Experience", who: "Mary Beth & Lorrie", time: "2:00–4:00 pm", price: "$12", type: "t-holiday", typeText: "Give yourself the gift of a little peace", desc: "Gentle dancing, free movement while Mary Beth plays crystal bowls and chimes, then a guided meditation. All levels, no dance experience needed.", url: PP + "/classes/21199116" },
+    { id: "blackfriday", cat: "move", d: new Date(2026, 10, 27, 10, 0), min: 60, title: "Black Friday Flow", who: "Mary Beth · Hatha Mixed Level", time: "10:00–11:00 am", price: "Regular class", img: "img/ev-mb.jpg", pos: "top", alt: "Mary Beth, who teaches the Friday Hatha class", credit: "Photo: coconutelephantyoga.com", desc: "The usual Friday Hatha Mixed Level class, in the studio and online.", url: PP + "/classes" },
+    { id: "reiki", cat: "energy", d: new Date(2026, 11, 4, 18, 30), min: 90, title: "Reiki Circle: Energetic Cleansing", who: "Jennifer & Holly", time: "6:30–8:00 pm", price: "$15–$50", priceNote: "donation", img: "img/ev-holly.jpg", alt: "Holly, who co-leads the Reiki Circle", credit: "Photo: coconutelephantyoga.com", desc: "Smoke, sound, intention, visualization and more. For seasoned practitioners and people new to Reiki alike.", url: PP + "/classes/21199122" },
+    { id: "holiday", cat: "still", d: new Date(2026, 11, 12, 14, 0), min: 120, title: "Holiday Serenity: A Mind-Body Experience", who: "Mary Beth & Lorrie", time: "2:00–4:00 pm", price: "$12", img: "img/sound-bowls.jpg", alt: "Mary Beth with crystal singing bowls", credit: "Photo: coconutelephantyoga.com", desc: "Gentle dancing, free movement while Mary Beth plays crystal bowls and chimes, then a guided meditation. All levels, no dance experience needed.", url: PP + "/classes/21199116" },
     { id: "embrace", past: true, cat: "still", d: new Date(2026, 10, 14, 18, 0), min: 90, title: "Embrace Autumn: Yoga Nidra & Sound Journey", who: "Holly", time: "6:00–7:30 pm", price: "$28", img: "img/yoga-nidra.jpg", alt: "Event image for Embrace Autumn", credit: "Image: coconutelephantyoga.com", desc: "As the leaves change and nature begins to release what it no longer needs, we are invited to do the same.", url: PP + "/classes/21110830" }
   ];
   var CATS = [["all", "Everything"], ["move", "Movement & dance"], ["still", "Sound & stillness"], ["energy", "Intuition & energy"]];
@@ -388,3 +398,5 @@
   });
   if (location.hash === "#owner") openOwner();
 })();
+/* "Open studio owner view" callout button opens the same panel as the header button. */
+document.addEventListener("click", function (e) { var b = e.target.closest && e.target.closest("[data-open-owner]"); if (b) { var o = document.getElementById("ownerOpen"); if (o) o.click(); } });

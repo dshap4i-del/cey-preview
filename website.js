@@ -46,16 +46,16 @@
 
   /* Instructors: names, credentials and a line from each bio */
   var TE = [
-    { n: "Mary Beth", c: "E-RYT 500, C-IAYT, CYT · Owner", q: "My interest in yoga began when I needed to find a balance between my inner and outer world experience.", img: "img/mary-beth.jpg" },
-    { n: "Martha", c: "ERYT 200 & Certified Health and Wellbeing Coach", q: "Yoga opened the doorway to experiencing myself in a deeply integrated and peaceful way." },
-    { n: "Heather", c: "Reiki Master, C-IAYT, 500 RYT", q: "Reiki addresses the body’s energy in a gentle and easy way." },
-    { n: "Holly", c: "RYT 200, Reiki Level 1 & 2, Sound Healing Practitioner", q: "I enjoy teaching beginners and exploring yogic philosophy, physics, frequencies, and languages." },
-    { n: "Sara", c: "RYT 200", q: "I combine creative sequencing, a spirit of playfulness, and a dose of inspiration." },
-    { n: "Lily", c: "RYT 200", q: "I believe that people need other people, and I strive to make my classes a welcoming space for all." },
-    { n: "Mariah", c: "RYT 200", q: "Every day is only the beginning and a fresh start to make a difference in the world." },
-    { n: "Melissa", c: "Certified Spiritual Consultant", q: "She founded the Richmond Intuitive Circle to provide in person meetings of like-minded people.", img: "img/intuitive-circle.jpg" },
-    { n: "Lorrie", c: "Hypnotherapist NATH, Meditation Coach", q: "I am a companion on your soul’s journey of expansion." },
-    { n: "Annie", c: "Shamanic Healer", q: "A time and place to be seen, heard, and nurtured." }
+    { n: "Mary Beth", c: "E-RYT 500, C-IAYT, CYT · Owner", q: "My interest in yoga began when I needed to find a balance between my inner and outer world experience.", img: "img/t-mb.jpg" },
+    { n: "Martha", c: "ERYT 200 & Certified Health and Wellbeing Coach", q: "Yoga opened the doorway to experiencing myself in a deeply integrated and peaceful way.", img: "img/t-martha.jpg" },
+    { n: "Heather", c: "Reiki Master, C-IAYT, 500 RYT", q: "Reiki addresses the body’s energy in a gentle and easy way.", img: "img/t-heather.jpg" },
+    { n: "Holly", c: "RYT 200, Reiki Level 1 & 2, Sound Healing Practitioner", q: "I enjoy teaching beginners and exploring yogic philosophy, physics, frequencies, and languages.", img: "img/t-holly.jpg" },
+    { n: "Sara", c: "RYT 200", q: "I combine creative sequencing, a spirit of playfulness, and a dose of inspiration.", img: "img/t-sara.jpg" },
+    { n: "Lily", c: "RYT 200", q: "I believe that people need other people, and I strive to make my classes a welcoming space for all.", img: "img/t-lily.jpg" },
+    { n: "Mariah", c: "RYT 200", q: "Every day is only the beginning and a fresh start to make a difference in the world.", img: "img/t-mariah.jpg" },
+    { n: "Melissa", c: "Certified Spiritual Consultant", q: "She founded the Richmond Intuitive Circle to provide in person meetings of like-minded people.", img: "img/t-melissa.jpg" },
+    { n: "Lorrie", c: "Hypnotherapist NATH, Meditation Coach", q: "I am a companion on your soul’s journey of expansion.", img: "img/t-lorrie.jpg" },
+    { n: "Annie", c: "Shamanic Healer", q: "A time and place to be seen, heard, and nurtured.", img: "img/t-annie.jpg" }
   ];
   $("#tgrid").innerHTML = TE.map(function (t) {
     var pic = t.img ? '<img src="' + t.img + '" alt="' + esc(t.n) + '" loading="lazy" width="96" height="96">' : '<span class="mono" aria-hidden="true">' + t.n[0] + "</span>";
