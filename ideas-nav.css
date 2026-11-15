@@ -1,0 +1,24 @@
+/* Idea switcher shared by every page. Bottom pill on desktop, full-width bar on phones. */
+body{padding-bottom:calc(92px + env(safe-area-inset-bottom))}
+.rsw{position:fixed;left:50%;bottom:calc(16px + env(safe-area-inset-bottom));transform:translateX(-50%);z-index:40;display:flex;align-items:center;gap:2px;padding:5px;background:rgba(27,42,35,.94);-webkit-backdrop-filter:saturate(1.3) blur(16px);backdrop-filter:saturate(1.3) blur(16px);border:1px solid rgba(233,201,147,.28);border-radius:999px;box-shadow:0 18px 44px -14px rgba(10,20,16,.55),0 2px 6px rgba(10,20,16,.18);font-family:"DM Sans",system-ui,-apple-system,sans-serif}
+.rsw-lab{font:600 10px/1 "DM Sans",system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#e9c993;padding:0 10px 0 12px;white-space:nowrap}
+.rsw a{display:flex;align-items:center;gap:7px;color:#e4ebe5;text-decoration:none;font-size:13.5px;font-weight:500;line-height:1;padding:10px 14px;border-radius:999px;white-space:nowrap;transition:background .2s,color .2s}
+.rsw a:hover{background:rgba(248,244,236,.1);color:#fff}
+.rsw a b{display:grid;place-items:center;width:19px;height:19px;border-radius:50%;border:1px solid rgba(233,201,147,.55);color:#e9c993;font-size:10.5px;font-weight:600}
+.rsw a[aria-current=page]{background:#f8f4ec;color:#1f352b}
+.rsw a[aria-current=page] b{border-color:#bf6a62;color:#bf6a62}
+.rsw a:focus-visible{outline:2px solid #e9c993;outline-offset:2px}
+@media (max-width:760px){
+  body{padding-bottom:calc(78px + env(safe-area-inset-bottom))}
+  .rsw{left:8px;right:8px;transform:none;bottom:calc(8px + env(safe-area-inset-bottom));justify-content:space-between;border-radius:20px;padding:5px}
+  .rsw-lab{display:none}
+  .rsw a{flex:1 1 0;flex-direction:column;gap:5px;padding:8px 2px 7px;border-radius:15px;font-size:11.5px;font-weight:600;min-width:0}
+  .rsw a b{width:18px;height:18px;font-size:10px}
+  .rsw a.rsw-all b{border-style:dashed}
+}
+@media print{.rsw{display:none}}
+.rsw-rib{background:#efe6d8;border-bottom:1px solid rgba(34,48,42,.12);font:400 13.5px/1.45 "DM Sans",system-ui,sans-serif;color:#4d5b54}
+.rsw-rib div{width:min(1160px,100% - 36px);margin:0 auto;display:flex;align-items:center;gap:14px;flex-wrap:wrap;padding:10px 0}
+.rsw-rib b{font:600 10.5px/1 "DM Sans",system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#bf6a62}
+.rsw-rib span{flex:1 1 300px}
+.rsw-rib a{font-weight:600;color:#2c4a3e;white-space:nowrap}
